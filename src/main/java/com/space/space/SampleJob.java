@@ -7,12 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class SampleJob implements Job {
-    //@Autowired
+    @Autowired
     private SampleJobService jobService;
-
-    public SampleJob() {
-        this.jobService = new SampleJobService();
-    }
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
 //        JobDataMap dataMap = context.getJobDetail().getJobDataMap();
