@@ -11,9 +11,6 @@ public class SampleJob implements Job {
     private SampleJobService jobService;
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
-//        JobDataMap dataMap = context.getJobDetail().getJobDataMap();
-//        String param = dataMap.getString("param");
-//        System.out.println(MessageFormat.format("Job: {0}; Param: {1}", getClass(), param));
         jobService.executeSampleJob();
     }
 }

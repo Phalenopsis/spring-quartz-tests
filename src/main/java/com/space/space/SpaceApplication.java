@@ -4,14 +4,12 @@ import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
 
-@EnableScheduling
 @SpringBootApplication
 public class SpaceApplication {
 
@@ -23,7 +21,6 @@ public class SpaceApplication {
 
 	private static void onStartup() throws SchedulerException {
 		JobDetail job = JobBuilder.newJob(SampleJob.class)
-				.usingJobData("param", "value")
 				.build();
 
 		Date afterFiveSeconds = Date.from(LocalDateTime.now().plusSeconds(5).atZone(ZoneId.systemDefault()).toInstant());
